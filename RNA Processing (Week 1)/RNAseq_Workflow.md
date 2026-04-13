@@ -2,8 +2,10 @@
 This guide outlines a basic RNA-seq pipeline including trimming, alignment, and quantification.
 
 # Trimming
+Trimming is quality control process for removing low-quality bases and adapter sequences from raw sequencing reads to improve overall data quality. This step helps ensure more accurate alignment and reliable downstream analysis in RNA-seq workflows. Trim Galore is a widely used tool that automates quality and adapter trimming by combining Cutadapt and FastQC into a simple, user-friendly pipeline
+
 1. Enter your trimming environment, go to ```scripts/```, and create a ```<trim>.sh``` file
-2. We will use the tool Trimgalore to cut our low quality bases, short reads and adapters on one of our sample (SRR11517726.fastq or HealthyLung_1.fastq)
+2. Use Trim Galore to cut our low quality bases, short reads and adapters on one of our sample (SRR11517726.fastq or HealthyLung_1.fastq)
 ```bash
 # Default Trimgalore Code
 trim_galore <input_fastq> -o <output>
@@ -15,8 +17,9 @@ nohup bash <trim>.sh > ../logs/<run_trim>.log 2>&1 &
 4. After trimming, go to ```trimmed/``` and run fastqc and see quality report
    
 # Alignment
+Alignment is the process of mapping trimmed sequencing reads to a reference genome to determine their origin. In RNA-seq, this requires a splice-aware aligner, which can correctly map reads that span exon–exon junctions by accounting for introns. HISAT2 is a fast and efficient splice-aware aligner that uses a graph-based approach to accurately align reads and support downstream transcript analysis.
 1. Enter your alignment environment, go to ```scripts/```, and create an ```<alignment>.sh``` file
-We will use hisat2 to align our trimmed read to reference genome
+2. Use hisat2 to align our trimmed read to reference genome
 ```bash
 #Default hisat2 alignment code
 hisat2 -x <index> -U <reads.fq> -S <output.sam>
