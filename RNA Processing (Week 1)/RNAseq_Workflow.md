@@ -3,7 +3,7 @@ This guide outlines a basic RNA-seq pipeline including trimming, alignment, and 
 
 # Trimming
 1. Enter your trimming environment, go to ```scripts/```, and create a ```<trim>.sh``` file
-2. We will use the tool Trimgalore to cut our low quality bases, short reads and adapters on one of our sample (HL1.fastq)
+2. We will use the tool Trimgalore to cut our low quality bases, short reads and adapters on one of our sample (SRR11517726.fastq or HealthyLung_1.fastq)
 ```bash
 # Default Trimgalore Code
 trim_galore <input_fastq> -o <output>
