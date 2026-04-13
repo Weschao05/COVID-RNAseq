@@ -56,7 +56,7 @@ mkdir raw_reads trimmed_reads ref_genome fastqc hisat2 alignments counts scripts
 ```bash
 cp /full/path/to/raw_reads/*.fastq .
 ```
-3. Copy Refernece Genome
+3. Copy Reference Genome
 ```bash
 cp /full/path/to/ref_genome/*.ht2 .
 ```
