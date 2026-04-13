@@ -60,3 +60,9 @@ cp /full/path/to/raw_reads/*.fastq .
 ```bash
 cp /full/path/to/ref_genome/*.ht2 .
 ```
+
+## 5. Run FASTQC on Raw FASTQ Files
+1. Run FASTQC on all raw reads files
+```bash
+fastqc input.fastq
+```
